@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WRONYX | Next-Gen AI Solutions & Agentic Enterprise Intelligence</title>
+    <meta name="description" content="WRONYX delivers cutting-edge autonomous AI agents, enterprise knowledge graphs, and predictive intelligence architectures. Innovate. Connect. Lead.">
+    
+    <!-- Favicon Icons -->
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Dynamic Canvas Particle Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Top Glow Header Banner -->
+    <header class="navbar-container" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="brand-logo-container" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+                <svg viewBox="0 0 100 100" width="44" height="44" style="filter: drop-shadow(0 0 12px rgba(0, 163, 224, 0.5)); flex-shrink:0;">
+                    <defs>
+                        <linearGradient id="cyberBlueGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00A3E0" />
+                            <stop offset="50%" stop-color="#0088FF" />
+                            <stop offset="100%" stop-color="#0A60A8" />
+                        </linearGradient>
+                        <linearGradient id="metalGunmetalGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#F1F5F9" />
+                            <stop offset="50%" stop-color="#5A626A" />
+                            <stop offset="100%" stop-color="#383E45" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="48" cy="50" r="30" stroke="url(#cyberBlueGradNav)" stroke-width="7.5" fill="none" />
+                    <path d="M 14,36 L 24,70 L 36,44 L 46,70 L 56,40" fill="none" stroke="#00E5FF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M 38,40 L 38,62 L 54,40 L 54,62" fill="none" stroke="url(#metalGunmetalGradNav)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M 30,68 L 76,24 L 84,30 L 60,74 Z" fill="url(#cyberBlueGradNav)" />
+                </svg>
+                <div class="logo-text-block" style="display:flex; flex-direction:column; line-height:1;">
+                    <span class="logo-title" style="font-family:'Orbitron', sans-serif; font-size:1.25rem; font-weight:900; letter-spacing:3px; background:linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 60%, #A0A6AC 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">WRONYX</span>
+                    <span class="logo-subtitle" style="font-family:'Orbitron', sans-serif; font-size:9px; font-weight:700; letter-spacing:2px; color:#00A3E0; margin-top:2px;">INNOVATE. CONNECT. LEAD.</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#solutions" class="nav-link">Solutions</a>
+                <a href="#playground" class="nav-link">AI Sandbox</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#roi-calculator" class="nav-link">ROI Calculator</a>
+                <a href="#brand-system" class="nav-link">Brand System</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-secondary" id="open-demo-btn">
+                    <i class="fa-solid fa-play"></i> Watch Demo
+                </button>
+                <button class="btn btn-primary" id="open-contact-btn">
+                    Get Started <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <button class="mobile-toggle" id="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#solutions" class="mobile-link">Solutions</a>
+        <a href="#playground" class="mobile-link">AI Sandbox</a>
+        <a href="#architecture" class="mobile-link">Architecture</a>
+        <a href="#roi-calculator" class="mobile-link">ROI Calculator</a>
+        <a href="#brand-system" class="mobile-link">Brand System</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <button class="btn btn-primary w-full" id="mobile-contact-btn">Get Started</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-glow-sphere"></div>
+        <div class="hero-glow-sphere-secondary"></div>
+
+        <div class="container hero-container">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Next-Gen Autonomous Agentic Intelligence</span>
+            </div>
+
+            <!-- Prominent WRONYX Brand Header Display -->
+            <div class="hero-brand-header" style="display:flex; flex-direction:column; align-items:center;">
+                <div class="hero-logo-large" style="width:110px; height:110px; position:relative; display:flex; align-items:center; justify-center:center; margin-bottom:16px;">
+                    <div class="hero-logo-glow-ring"></div>
+                    <svg viewBox="0 0 100 100" width="110" height="110" style="filter: drop-shadow(0 0 20px rgba(0, 163, 224, 0.7));">
+                        <circle cx="48" cy="50" r="30" stroke="url(#cyberBlueGradNav)" stroke-width="7.5" fill="none" />
+                        <path d="M 14,36 L 24,70 L 36,44 L 46,70 L 56,40" fill="none" stroke="#00E5FF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M 38,40 L 38,62 L 54,40 L 54,62" fill="none" stroke="url(#metalGunmetalGradNav)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M 30,68 L 76,24 L 84,30 L 60,74 Z" fill="url(#cyberBlueGradNav)" />
+                    </svg>
+                </div>
+                <h1 class="hero-company-name" style="font-family:'Orbitron', sans-serif; font-size:3.5rem; font-weight:900; letter-spacing:7px; color:#FFFFFF;">WRONYX</h1>
+                <p class="hero-motto" style="font-family:'Orbitron', sans-serif; font-size:1.1rem; font-weight:800; letter-spacing:8px; color:#00A3E0; margin-top:4px;">INNOVATE. CONNECT. LEAD.</p>
+            </div>
+
+            <h2 class="hero-title">
+                Architecting Autonomous <span class="text-gradient">AI Solutions</span> For Enterprise Growth
+            </h2>
+
+            <p class="hero-description">
+                WRONYX empowers global organizations with multi-agent orchestration, self-healing knowledge graphs, and real-time neural automation pipelines designed to scale operations infinitely.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#playground" class="btn btn-primary btn-lg glow-effect">
+                    <i class="fa-solid fa-bolt"></i> Launch AI Sandbox
+                </a>
+                <a href="#solutions" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-layer-group"></i> Explore AI Suite
+                </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="hero-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" data-count="99.6">99.6%</div>
+                    <div class="stat-label">Agent Task Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" data-count="12">12x</div>
+                    <div class="stat-label">Faster Decision Velocity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" data-count="500">500M+</div>
+                    <div class="stat-label">Daily Neural Queries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" data-count="100">Zero-Trust</div>
+                    <div class="stat-label">Enterprise Security</div>
+                </div>
+            </div>
+
+            <!-- Interactive Platform Visual Container -->
+            <div class="hero-visual-frame glass-panel">
+                <div class="frame-header">
+                    <div class="frame-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="frame-title">WRONYX AI Core Engine v4.8 — Live Dashboard</div>
+                    <div class="frame-status"><span class="status-indicator"></span> 4 Agents Active</div>
+                </div>
+                <div class="frame-body">
+                    <div class="dashboard-grid-preview">
+                        <div class="dash-card">
+                            <div class="dash-card-header">
+                                <i class="fa-solid fa-brain text-cyan"></i>
+                                <span>Agentic Workflow Orchestrator</span>
+                            </div>
+                            <div class="agent-nodes">
+                                <div class="node active">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <span>Data Ingest</span>
+                                </div>
+                                <div class="node-line active"></div>
+                                <div class="node active">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Reasoning</span>
+                                </div>
+                                <div class="node-line active"></div>
+                                <div class="node active glowing">
+                                    <i class="fa-solid fa-code"></i>
+                                    <span>Execute</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dash-card">
+                            <div class="dash-card-header">
+                                <i class="fa-solid fa-chart-line text-cyan"></i>
+                                <span>Real-Time Output Velocity</span>
+                            </div>
+                            <div class="mini-chart">
+                                <div class="chart-bar" style="--h: 40%"></div>
+                                <div class="chart-bar" style="--h: 65%"></div>
+                                <div class="chart-bar" style="--h: 55%"></div>
+                                <div class="chart-bar" style="--h: 85%"></div>
+                                <div class="chart-bar" style="--h: 95%"></div>
+                                <div class="chart-bar" style="--h: 70%"></div>
+                                <div class="chart-bar active" style="--h: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Solutions Section -->
+    <section class="section" id="solutions">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Enterprise AI Portfolio</span>
+                <h2 class="section-title">Turn Complex Data Into <span class="text-gradient">Autonomous Power</span></h2>
+                <p class="section-subtitle">Discover WRONYX's modular suite of AI solutions engineered for speed, accuracy, and bulletproof security.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="solutions-filter">
+                <button class="filter-btn active" data-filter="all">All Solutions</button>
+                <button class="filter-btn" data-filter="agentic">Agentic AI</button>
+                <button class="filter-btn" data-filter="enterprise">Knowledge Graphs</button>
+                <button class="filter-btn" data-filter="security">Security & Governance</button>
+            </div>
+
+            <div class="solutions-grid">
+                <!-- Card 1 -->
+                <div class="solution-card glass-card" data-category="agentic">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="card-title">Multi-Agent Workflow Orchestration</h3>
+                    <p class="card-text">
+                        Deploy teams of autonomous AI agents that communicate, reason, validate, and execute multi-step business logic without manual intervention.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Self-correcting execution loops</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Natural language tool binding</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Human-in-the-loop fallback</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="solution-card glass-card" data-category="enterprise">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3 class="card-title">Neural Enterprise Knowledge Graphs</h3>
+                    <p class="card-text">
+                        Unify unstructured PDFs, databases, and APIs into a queryable semantic vector store with sub-100ms retrieval speed.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Hybrid Graph RAG architecture</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Citation tracing & zero hallucination</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Automatic schema updates</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="solution-card glass-card" data-category="agentic">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="card-title">Cognitive Process Automation</h3>
+                    <p class="card-text">
+                        Transform repetitive back-office document processing, customer support, and analysis into 24/7 intelligent automated workflows.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Multimodal document extraction</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Automated report synthesis</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Legacy API connectors</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="solution-card glass-card" data-category="security">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="card-title">Zero-Trust AI Guardrails & Governance</h3>
+                    <p class="card-text">
+                        Enterprise-grade compliance layers ensuring strict PII masking, RBAC data isolation, and continuous prompt injection security.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Real-time toxicity & PII filtering</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> SOC2 & HIPAA compliant logs</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> On-premise air-gapped options</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="solution-card glass-card" data-category="enterprise">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="card-title">Custom LLM Fine-Tuning & Edge AI</h3>
+                    <p class="card-text">
+                        Train domain-specific open models fine-tuned on your proprietary data, optimized for ultra-low latency execution.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> LoRA & QLoRA quantization</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> 80% reduced inference cost</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Private cloud deployment</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="solution-card glass-card" data-category="agentic">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="card-title">Generative Code & Analytics Hub</h3>
+                    <p class="card-text">
+                        Automate software development, SQL query generation, and predictive financial modeling with context-aware AI copilots.
+                    </p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Automated test suite generation</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Real-time anomaly detection</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Custom BI dashboard synthesis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive AI Playground -->
+    <section class="section bg-darker" id="playground">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Live Interactive Simulator</span>
+                <h2 class="section-title">Test WRONYX <span class="text-gradient">Agentic Intelligence</span></h2>
+                <p class="section-subtitle">Experience how WRONYX AI agents analyze, plan, and execute multi-step tasks in real time.</p>
+            </div>
+
+            <div class="playground-container glass-panel">
+                <div class="playground-sidebar">
+                    <h4 class="sidebar-title"><i class="fa-solid fa-user-gear text-cyan"></i> Select AI Agent Persona</h4>
+                    
+                    <div class="agent-select-list">
+                        <button class="agent-btn active" data-agent="analyst">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <div>
+                                <div class="agent-name">Enterprise Data Analyst</div>
+                                <div class="agent-desc">Synthesizes reports & KPIs</div>
+                            </div>
+                        </button>
+
+                        <button class="agent-btn" data-agent="coder">
+                            <i class="fa-solid fa-code"></i>
+                            <div>
+                                <div class="agent-name">Autonomous Full-Stack Engineer</div>
+                                <div class="agent-desc">Generates & audits code</div>
+                            </div>
+                        </button>
+
+                        <button class="agent-btn" data-agent="outreach">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <div>
+                                <div class="agent-name">Outreach & Communications Agent</div>
+                                <div class="agent-desc">Personalized engagement</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="playground-main">
+                    <div class="playground-controls">
+                        <label for="prompt-input" class="input-label">Task Prompt for WRONYX AI Agent:</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="prompt-input" value="Analyze Q3 revenue trends, identify top churn factors, and generate executive summary." placeholder="Type a task prompt...">
+                            <button class="btn btn-primary" id="run-agent-btn">
+                                <i class="fa-solid fa-play"></i> Run Agent
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="playground-terminal">
+                        <div class="terminal-header">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                            <span class="term-title">WRONYX Terminal Log</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-body">
+                            <div class="log-line text-muted">[SYSTEM]: WRONYX Agent Engine v4.8 initialized. Ready for task prompt.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture & Workflow Section -->
+    <section class="section" id="architecture">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">How WRONYX Works</span>
+                <h2 class="section-title">The WRONYX <span class="text-gradient">Neural Workflow</span></h2>
+                <p class="section-subtitle">A seamless 4-stage pipeline that converts raw enterprise data into deterministic actions.</p>
+            </div>
+
+            <div class="architecture-steps-grid">
+                <div class="step-card glass-card">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Ingest & Vectorize</h3>
+                    <p class="step-text">Data is parsed from APIs, cloud storage, and legacy files, then converted into dense vector embeddings.</p>
+                </div>
+
+                <div class="step-card glass-card">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Multi-Model Reasoning</h3>
+                    <p class="step-text">Autonomous agents evaluate goals, decompose complex tasks, and dynamically select optimal tools.</p>
+                </div>
+
+                <div class="step-card glass-card">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Deterministic Execution</h3>
+                    <p class="step-text">Actions are executed safely within isolated sandbox environments with automated error checking.</p>
+                </div>
+
+                <div class="step-card glass-card">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Continuous Feedback Loop</h3>
+                    <p class="step-text">Telemetry and performance metrics feed into reinforcement learning pipelines to improve accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Enterprise ROI Calculator -->
+    <section class="section bg-darker" id="roi-calculator">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Business Impact</span>
+                <h2 class="section-title">Calculate Your <span class="text-gradient">WRONYX AI ROI</span></h2>
+                <p class="section-subtitle">Estimate how much time and operational costs WRONYX AI automation saves your enterprise annually.</p>
+            </div>
+
+            <div class="roi-calculator-box glass-panel">
+                <div class="roi-inputs">
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Team Size (Employees)</label>
+                            <span class="slider-val" id="team-val">25 Employees</span>
+                        </div>
+                        <input type="range" id="team-slider" min="5" max="500" value="25" class="custom-slider">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Average Hourly Rate ($)</label>
+                            <span class="slider-val" id="rate-val">$65 / hr</span>
+                        </div>
+                        <input type="range" id="rate-slider" min="20" max="200" value="65" class="custom-slider">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Manual Hours Automated per Week per Employee</label>
+                            <span class="slider-val" id="hours-val">12 Hours</span>
+                        </div>
+                        <input type="range" id="hours-slider" min="2" max="30" value="12" class="custom-slider">
+                    </div>
+                </div>
+
+                <div class="roi-results">
+                    <div class="roi-result-card glowing-border">
+                        <div class="result-label">Estimated Annual Savings</div>
+                        <div class="result-amount" id="savings-amount">$1,014,000</div>
+                        <div class="result-sub">Equivalent to <span id="hours-saved" class="text-cyan">15,600 hours</span> saved per year</div>
+                    </div>
+
+                    <div class="roi-metrics-duo">
+                        <div class="mini-result">
+                            <span class="mini-title">Productivity Boost</span>
+                            <span class="mini-value text-gradient" id="efficiency-boost">35%</span>
+                        </div>
+                        <div class="mini-result">
+                            <span class="mini-title">Payback Period</span>
+                            <span class="mini-value text-gradient">< 30 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Client Impact -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Trusted by Visionaries</span>
+                <h2 class="section-title">What Tech Leaders Say About <span class="text-gradient">WRONYX</span></h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "WRONYX's multi-agent workflow cut our document processing pipeline from 4 days to less than 15 minutes. The accuracy and zero-hallucination rate are remarkable."
+                    </p>
+                    <div class="author-info">
+                        <div class="author-avatar">EP</div>
+                        <div>
+                            <div class="author-name">Elena Rostova</div>
+                            <div class="author-role">CTO, FinTech Innovations Global</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Integrating WRONYX knowledge graphs transformed our internal research operations. Our engineers query 10 years of technical specs in plain English instantly."
+                    </p>
+                    <div class="author-info">
+                        <div class="author-avatar">MK</div>
+                        <div>
+                            <div class="author-name">Marcus Vance</div>
+                            <div class="author-role">VP of AI, Apex BioLabs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The motto 'Innovate. Connect. Lead.' is truly built into WRONYX's technology stack. Their zero-trust security guardrails made enterprise compliance a breeze."
+                    </p>
+                    <div class="author-info">
+                        <div class="author-avatar">SL</div>
+                        <div>
+                            <div class="author-name">Sarah Lin</div>
+                            <div class="author-role">Head of Infrastructure, NexaCorp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section bg-darker" id="pricing">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Flexible Engagement</span>
+                <h2 class="section-title">Scalable <span class="text-gradient">AI Plans</span> For Every Growth Phase</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan 1 -->
+                <div class="pricing-card glass-card">
+                    <h3 class="plan-name">Starter Acceleration</h3>
+                    <div class="plan-price">$2,499 <span>/ month</span></div>
+                    <p class="plan-desc">Ideal for fast-scaling startups launching their first agentic workflows.</p>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Up to 5 Autonomous AI Agents</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> 1M Tokens / Month</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Standard Vector Knowledge Store</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> 8/5 Email & Slack Support</li>
+                    </ul>
+                    <button class="btn btn-secondary w-full open-contact">Get Started</button>
+                </div>
+
+                <!-- Plan 2 (Popular) -->
+                <div class="pricing-card glass-card featured glowing-border">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="plan-name">Enterprise Suite</h3>
+                    <div class="plan-price">$7,999 <span>/ month</span></div>
+                    <p class="plan-desc">For established companies deploying enterprise-wide neural knowledge networks.</p>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Unlimited Autonomous Agents</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> 20M Tokens / Month</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Multi-Graph Neural RAG Engine</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Zero-Trust Guardrails & PII Masking</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Dedicated AI Architect & 24/7 Support</li>
+                    </ul>
+                    <button class="btn btn-primary w-full open-contact">Deploy Enterprise</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card glass-card">
+                    <h3 class="plan-name">Custom Air-Gapped</h3>
+                    <div class="plan-price">Custom</div>
+                    <p class="plan-desc">Full on-premise deployment with custom fine-tuned open models for sovereign data.</p>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check text-cyan"></i> Dedicated On-Prem GPU Cluster</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Custom LLM Fine-Tuning (LoRA)</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Complete Air-Gapped Isolation</li>
+                        <li><i class="fa-solid fa-check text-cyan"></i> Custom SLA & Legal Guarantee</li>
+                    </ul>
+                    <button class="btn btn-secondary w-full open-contact">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Banner CTA -->
+    <section class="section cta-banner-section">
+        <div class="container">
+            <div class="cta-box glass-panel text-center">
+                <div class="cta-logo-glow">
+                    <img src="assets/wronyx_emblem.png" alt="WRONYX Emblem" class="cta-logo-img">
+                </div>
+                <h2 class="cta-title">Ready To Transform Your Enterprise With <span class="text-gradient">WRONYX</span>?</h2>
+                <p class="cta-text">Join leading innovators deploying autonomous AI agents today.</p>
+                <button class="btn btn-primary btn-lg open-contact">
+                    <i class="fa-solid fa-rocket"></i> Schedule Executive Briefing
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo-container">
+                    <div class="logo-emblem">
+                        <img src="assets/wronyx_emblem.png" alt="WRONYX Logo Emblem" class="logo-img">
+                    </div>
+                    <div class="logo-text-block">
+                        <span class="logo-title">WRONYX</span>
+                        <span class="logo-subtitle">INNOVATE. CONNECT. LEAD.</span>
+                    </div>
+                </a>
+                <p class="footer-desc">
+                    Architecting next-generation autonomous AI systems, knowledge graphs, and cognitive enterprise automation solutions.
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <a href="#solutions">Agentic Orchestration</a>
+                <a href="#solutions">Knowledge Graphs</a>
+                <a href="#solutions">Process Automation</a>
+                <a href="#solutions">Zero-Trust Security</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Platform</h4>
+                <a href="#playground">Interactive Sandbox</a>
+                <a href="#architecture">Architecture Specs</a>
+                <a href="#roi-calculator">ROI Estimator</a>
+                <a href="#pricing">Enterprise Plans</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#">About WRONYX</a>
+                <a href="#">Careers</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 WRONYX AI Solutions Inc. All rights reserved. INNOVATE. CONNECT. LEAD.</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal-box glass-panel">
+            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h3 class="modal-title">Get Started With <span class="text-gradient">WRONYX</span></h3>
+                <p class="modal-subtitle">Speak with an AI Solutions Architect to customize your deployment.</p>
+            </div>
+            <form id="contact-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="e.g. Alex Morgan">
+                </div>
+                <div class="form-group">
+                    <label>Work Email</label>
+                    <input type="email" required placeholder="alex@company.com">
+                </div>
+                <div class="form-group">
+                    <label>Company / Organization</label>
+                    <input type="text" required placeholder="NexaCorp AI">
+                </div>
+                <div class="form-group">
+                    <label>Select Primary Objective</label>
+                    <select>
+                        <option>Agentic Workflow Orchestration</option>
+                        <option>Enterprise Knowledge Graph (RAG)</option>
+                        <option>Custom Model Fine-Tuning</option>
+                        <option>Executive Demo & Consulting</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
