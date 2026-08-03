@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import ExecutiveLeadership from '../components/ExecutiveLeadership';
+import ResearchJournal from '../components/ResearchJournal';
 import Solutions from '../components/Solutions';
 import AIPlayground from '../components/AIPlayground';
 import Architecture from '../components/Architecture';
@@ -89,9 +91,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen relative bg-[#1E2226] text-white">
+    <main className="min-h-screen relative bg-[#1E2226] text-white overflow-x-hidden">
       <Navbar onOpenContact={() => setModalOpen(true)} />
       <Hero onOpenContact={() => setModalOpen(true)} />
+      <ExecutiveLeadership />
+      <ResearchJournal />
       <Solutions />
       <AIPlayground />
       <Architecture />

@@ -14,12 +14,12 @@ export default function Navbar({ onOpenContact }) {
             <WronyxLogo size="md" />
           </a>
 
-          <nav className="nav-links hidden md:flex items-center gap-8">
+          <nav className="nav-links hidden md:flex items-center gap-6">
+            <a href="#leadership" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">CEO & Founder</a>
+            <a href="#journal" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">Research Journal</a>
             <a href="#solutions" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">Solutions</a>
             <a href="#playground" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">AI Sandbox</a>
             <a href="#architecture" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">Architecture</a>
-            <a href="#roi-calculator" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">ROI Calculator</a>
-            <a href="#brand-system" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">Brand System</a>
             <a href="#pricing" className="nav-link text-sm font-medium text-gray-300 hover:text-[#00A3E0] transition-colors">Pricing</a>
           </nav>
 
