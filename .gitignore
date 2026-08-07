@@ -24,6 +24,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local design references
+pics/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { BookMarked, FolderOpen, FileCode, Quote, Download } from 'lucide-react';
 
 export default function ResearchJournal() {
   const publications = [
@@ -34,38 +35,39 @@ export default function ResearchJournal() {
   ];
 
   return (
-    <section className="section py-20 bg-[#1E2226] relative" id="journal">
-      <div className="container mx-auto px-4 max-w-[1240px]">
+    <section className="py-24 bg-[#101418] relative overflow-hidden border-t border-[#333b40]" id="journal">
+      <div className="max-w-[1240px] mx-auto px-6 relative z-10">
+        
         {/* Section Header */}
-        <div className="section-header text-center mb-12">
-          <div className="section-tag inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00A3E0]/10 border border-[#00A3E0]/30 text-[#00A3E0] text-xs font-bold uppercase tracking-wider mb-3">
-            <i className="fa-solid fa-[#00A3E0] fa-book-bookmark"></i> Peer-Reviewed AIKE Research Journal
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2.5 text-[10px] font-extrabold tracking-[0.19em] text-[#d7dfe3] uppercase mb-4 px-4 py-1.5 rounded-full border border-[#c7ff4a]/20 bg-[#c7ff4a]/10">
+            <BookMarked size={14} className="text-[#c7ff4a]" /> PEER-REVIEWED AI RESEARCH
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
-            WRONYX <span className="text-gradient">Research Publications</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none">
+            WRONYX <em>Research Publications.</em>
           </h2>
-          <p className="section-subtitle text-gray-400 max-w-2xl mx-auto mt-2 text-sm sm:text-base">
+          <p className="text-gray-400 max-w-2xl mx-auto mt-4 text-sm sm:text-base">
             Advancing the state of the art in Artificial Intelligence, Knowledge Engineering, and Cognitive Systems.
           </p>
         </div>
 
         {/* Journal Stats Banner */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          <div className="p-4 bg-[#282C31] rounded-xl border border-[#383E45] text-center">
-            <span className="block text-2xl font-black text-[#00A3E0]">4.92</span>
-            <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Journal Impact Factor</span>
+          <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+            <span className="block text-2xl font-extrabold text-[#c7ff4a]">4.92</span>
+            <span className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider">Impact Factor</span>
           </div>
-          <div className="p-4 bg-[#282C31] rounded-xl border border-[#383E45] text-center">
-            <span className="block text-2xl font-black text-white">Open Access</span>
-            <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Peer-Reviewed Papers</span>
+          <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+            <span className="block text-2xl font-extrabold text-white">Open Access</span>
+            <span className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider">Peer-Reviewed</span>
           </div>
-          <div className="p-4 bg-[#282C31] rounded-xl border border-[#383E45] text-center">
-            <span className="block text-2xl font-black text-[#00A3E0]">ISSN 2790-412X</span>
-            <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Registered Journal</span>
+          <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+            <span className="block text-2xl font-extrabold text-[#0ba9cc]">ISSN 2790-412X</span>
+            <span className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider">Registered Journal</span>
           </div>
-          <div className="p-4 bg-[#282C31] rounded-xl border border-[#383E45] text-center">
-            <span className="block text-2xl font-black text-white">Double-Blind</span>
-            <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Review Protocol</span>
+          <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+            <span className="block text-2xl font-extrabold text-white">Double-Blind</span>
+            <span className="text-[10px] text-gray-400 font-mono font-bold uppercase tracking-wider">Review Protocol</span>
           </div>
         </div>
 
@@ -74,47 +76,49 @@ export default function ResearchJournal() {
           {publications.map((pub, idx) => (
             <div 
               key={idx} 
-              className="glass-panel p-6 sm:p-8 rounded-2xl border border-[#383E45] bg-[#282C31] hover:border-[#00A3E0] transition-all duration-300 shadow-xl group"
+              className="p-6 sm:p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md hover:border-[#c7ff4a] transition-all duration-300 shadow-xl group"
             >
-              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <span className="text-xs font-mono font-bold text-[#00A3E0] bg-[#00A3E0]/10 px-3 py-1 rounded-md border border-[#00A3E0]/30">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span className="text-xs font-mono font-bold text-[#c7ff4a] bg-[#c7ff4a]/10 px-3 py-1 rounded border border-[#c7ff4a]/20">
                   {pub.volume}
                 </span>
-                <span className="text-xs text-gray-400 font-semibold bg-[#1E2226] px-3 py-1 rounded-md border border-[#383E45]">
-                  <i className="fa-solid fa-folder-open text-[#00A3E0] mr-1"></i> {pub.category}
+                <span className="text-xs font-mono text-gray-400 bg-[#0d1115] px-3 py-1 rounded border border-white/10 flex items-center gap-1.5">
+                  <FolderOpen size={13} className="text-[#0ba9cc]" /> {pub.category}
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#00A3E0] transition-colors mb-2 leading-snug">
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#c7ff4a] transition-colors mb-3 leading-snug">
                 {pub.title}
               </h3>
 
-              <p className="text-xs font-medium text-gray-400 mb-4 flex items-center gap-2">
-                <i className="fa-solid fa-[#00A3E0] fa-user-pen text-[#00A3E0]"></i> {pub.authors}
+              <p className="text-xs font-mono text-[#0ba9cc] mb-4">
+                Author: {pub.authors}
               </p>
 
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 bg-[#1E2226] p-4 rounded-xl border border-[#383E45]">
+              <p className="text-gray-300 text-sm leading-relaxed mb-6 bg-[#0d1115] p-4 rounded-xl border border-white/10">
                 {pub.abstract}
               </p>
 
-              <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-[#383E45]/50 text-xs">
-                <span className="font-mono text-gray-400">
-                  DOI: <span className="text-gray-200">{pub.doi}</span>
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-white/10 text-xs">
+                <span className="font-mono text-gray-500">
+                  DOI: <span className="text-gray-300">{pub.doi}</span>
                 </span>
 
                 <div className="flex items-center gap-4">
-                  <span className="text-gray-400 font-semibold">
-                    <i className="fa-solid fa-quote-left text-[#00A3E0] mr-1"></i> {pub.citations} Citations
+                  <span className="text-gray-400 font-mono flex items-center gap-1">
+                    <Quote size={13} className="text-[#c7ff4a]" /> {pub.citations} Citations
                   </span>
-                  <button type="button" className="btn btn-secondary text-xs py-1.5 px-3 rounded-lg flex items-center gap-1.5">
-                    <i className="fa-solid fa-file-pdf text-red-400"></i> Read PDF
+                  <button type="button" className="px-3.5 py-1.5 rounded-full border border-white/15 text-white hover:border-[#c7ff4a] hover:text-[#c7ff4a] text-xs font-bold flex items-center gap-1.5 transition-all">
+                    <Download size={13} /> Read PDF
                   </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
 }
+

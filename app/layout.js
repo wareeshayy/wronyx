@@ -1,4 +1,7 @@
 import './globals.css';
+import RagChatbot from '../components/RagChatbot';
+import MotionLayer from '../components/MotionLayer';
+import SignalMarquee from '../components/SignalMarquee';
 
 export const metadata = {
   title: 'WRONYX | Next-Gen AI Solutions & Agentic Enterprise Intelligence',
@@ -20,7 +23,10 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <canvas id="bg-canvas"></canvas>
+        <MotionLayer />
         {children}
+        <SignalMarquee label="WRONYX intelligence in motion" />
+        <RagChatbot />
       </body>
     </html>
   );
