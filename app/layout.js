@@ -7,8 +7,13 @@ export const metadata = {
   title: 'WRONYX | Next-Gen AI Solutions & Agentic Enterprise Intelligence',
   description: 'WRONYX delivers cutting-edge autonomous AI agents, enterprise knowledge graphs, and predictive intelligence architectures. Innovate. Connect. Lead.',
   icons: {
-    icon: '/assets/favicon.png',
-    shortcut: '/assets/favicon.ico',
+    icon: [
+      { url: '/assets/favicon.ico', sizes: '64x64', type: 'image/x-icon' },
+      { url: '/assets/favicon.png', sizes: '128x128', type: 'image/png' },
+      { url: '/assets/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: [{ url: '/assets/favicon.ico', type: 'image/x-icon' }],
+    apple: [{ url: '/assets/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
