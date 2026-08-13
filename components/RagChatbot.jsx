@@ -6,10 +6,10 @@ import { Bot, ChevronRight, MessageCircle, Send, ShieldCheck, X } from 'lucide-r
 
 const welcome = {
   role: 'assistant',
-  text: "Hi — I’m the WRONYX knowledge assistant. Ask me about our services, AI capabilities, careers, leadership, or how to start a project.",
+  text: "Hi — I’m the WRONYX knowledge assistant. Ask me about our services, AI capabilities, careers, team, or how to start a project.",
   sources: [],
 };
-const prompts = ['Who is the founder?', 'What AI services do you offer?', 'How can I apply?'];
+const prompts = ['Who is on the team?', 'What AI services do you offer?', 'How can I apply?'];
 
 export default function RagChatbot() {
   const [open, setOpen] = useState(false);

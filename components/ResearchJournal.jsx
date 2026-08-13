@@ -8,7 +8,7 @@ export default function ResearchJournal() {
     {
       volume: 'Vol. 12, Issue 4 — 2026',
       title: 'Autonomous Multi-Agent Consensus Models in Ultra-Low Latency Enterprise Environments',
-      authors: 'Wareesha Ashraf (CEO & Founder, WRONYX), et al.',
+      authors: 'WRONYX Neural Intelligence Research Group',
       category: 'Agentic Orchestration',
       citations: 142,
       doi: '10.1016/j.wronyx.2026.04.012',
@@ -26,7 +26,7 @@ export default function ResearchJournal() {
     {
       volume: 'Vol. 11, Issue 8 — 2025',
       title: 'Zero-Trust AI Compliance Guardrails & PII Masking in Multi-Tenant Agent Memory State',
-      authors: 'Wareesha Ashraf (Lead Author)',
+      authors: 'WRONYX Security Research Group',
       category: 'Enterprise Security',
       citations: 215,
       doi: '10.1016/j.wronyx.2025.08.204',
@@ -121,4 +121,3 @@ export default function ResearchJournal() {
     </section>
   );
 }
-
